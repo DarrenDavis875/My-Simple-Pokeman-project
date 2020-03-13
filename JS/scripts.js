@@ -1,19 +1,28 @@
 var repository = [
     {
         name: 'Ivysour',
-        height: 1,
+        height:3,
         type: ['grass', 'normal']
 
     },
     {
         name: 'Blastoise',
-        height: 2,
+        height:4,
         type: ['normal','grass']
     },
     {
         name:'Pidgeot',
-        height: 3,
+        height:5,
         type: ['poison','grass']
     }
 
 ];
+
+for(var i = 0; i < repository.length; i++){
+if (repository[i].height > 4) {
+    document.write(repository[i].name + ' (Height: ' + repository[i].height + ') Wow, thats big!' + '<br>');
+} else {
+     document.write(repository[i].name + ' (Height: ' + repository[i].height + ')' + '<br>');
+}
+
+}
