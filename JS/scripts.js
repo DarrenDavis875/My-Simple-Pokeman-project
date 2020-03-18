@@ -28,5 +28,5 @@ if (repository[i].height > 4) {
 }
 
 repository.forEach(function(property){
-    document.write (repository.name + ' (Height: ', repository.height + ')' + '<br>' )    
+    document.write (property.name + ' (Height: ', property.height + ')' + '<br>' )    
 }); 
