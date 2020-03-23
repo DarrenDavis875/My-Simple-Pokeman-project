@@ -23,19 +23,19 @@
         }
     
     ];
-    function add(pokemon){
-        repository.push(pokemon);
+    function add(item){
+        repository.push(item);
     }
     function getAll(){
         return repository;
     }
     return {
-        add: add
-        getAll: getAll
+        add: add,
+        getAll : getAll
     };
   })(); 
 
   pokemonRepository.getAll().forEach(function(pokemon){
-    document.write (pokemonRepository.add.name + ' (Height: ', pokemonRepository.add.height + ')' + '<br>' ) 
+    document.write (pokemon.name + ' Height: ('+ pokemon.height +')'+ '<br>')
 });
     
