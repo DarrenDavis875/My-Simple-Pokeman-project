@@ -2,6 +2,15 @@
 body {
     background-color: bisque;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold;
-    
+    font-weight: bold;  
 }
+button {
+    background: blue;
+    color: #ccc;
+    margin-bottom: 5px;
+    width: 240px;
+    height: 50px;
+    border: 2px solid;
+    font-size: 30px;
+    border-radius: 10px;
+  }
