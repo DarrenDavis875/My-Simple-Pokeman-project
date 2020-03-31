@@ -43,9 +43,10 @@
         $button.classList.add('pokemon-name');
         $listItem.appendChild($button);
         $pokemonList.appendChild($listItem);
-        $button.addEventListner(click,function(event) {
-            showDetails(pokemon)
-        });
+        $button.addEventListener('click', function (event) {
+            showDetails(pokemon)}
+            
+        )};
               
         return {
         add: add,
