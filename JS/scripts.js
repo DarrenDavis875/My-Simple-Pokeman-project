@@ -96,8 +96,9 @@
         var nameElement = document.createElement('h1');
             nameElement.innerText = item.name;
 
-           var imageElement = document.createElement('img');
-           imageElement.attr('src', item.imageUrl);
+            var imageElement = document.createElement('img');
+            imageElement.setAttribute('src', item.imageUrl);
+           imageElement.setAttribute('alt', 'Pokemon-img')
       
            // add height to modal
         var heightElement = document.createElement('p');
@@ -141,12 +142,6 @@
           $modalContainer.classList.remove('is-visible');
 
         }
-
-
-
-        
-
-        
 
             
         return {
