@@ -124,8 +124,3 @@ pokemonRepository.loadList().then(function () {
     pokemonRepository.addlistItem(pokemon);
   });
 });
-
-
-
-
- 
