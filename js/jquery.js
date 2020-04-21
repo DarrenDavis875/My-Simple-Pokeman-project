@@ -83,10 +83,10 @@ var pokemonRepository = (function () {
       var nameElement = $(<h1 >item.name</h1>);
       
       var imageElementFront = $('<img>');
-      $(imageElementFront).attr('src',item.imageUrlFront,);
+      imageElementFront.attr('src',item.imageUrlFront);
   
       var imageElementBack = $('<img>');
-      $(imageElementBack).attr('src', item.imageUrlBack,);
+      imageElementBack.attr('src', item.imageUrlBack);
       // add height to modal
       var heightElement = $('<p>' + 'Height: ' + item.height + 'm','</p>');
       
