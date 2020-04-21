@@ -20,7 +20,7 @@ var pokemonRepository = (function () {
     $button.addEventListener('click', function (event) {
       showDetails(pokemon)
     }
-     )
+    )
   };
   function loadList() {
     return fetch(apiUrl).then(function (response) {
