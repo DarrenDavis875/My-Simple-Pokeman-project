@@ -73,6 +73,7 @@ var pokemonRepository = (function () {
     // add item name to modal
     var nameElement = document.createElement('h1');
     nameElement.innerText = item.name;
+    //add image to modal
     var imageElement = document.createElement('img');
     imageElement.setAttribute('src', item.imageUrl);
     imageElement.setAttribute('alt', 'Pokemon-img')
