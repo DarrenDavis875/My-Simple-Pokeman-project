@@ -4,7 +4,7 @@ var pokemonRepository = (function () {
   var $modalContainer = document.querySelector('#modal-container');
   function add(pokemon) {
     repository.push(pokemon);
-  }
+}
   function getAll() {
     return repository;
   }
@@ -49,7 +49,7 @@ var pokemonRepository = (function () {
       item.types = details.types;
     }).catch(function (e) {
       console.error(e);
-    });
+     });
   }
   function showDetails(item) {
     pokemonRepository.loadDetails(item).then(function () {
