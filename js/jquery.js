@@ -72,7 +72,7 @@ var pokemonRepository = (function () {
     //showModal content
     function showModal(item) {
       //clear $modalContainer
-      $(modalContainer).empty();
+      $($modalContainer).empty();
       // add a div and class to DOM
       var modal = $('<div class = ',modal,'></div');
       
@@ -105,7 +105,7 @@ var pokemonRepository = (function () {
       
   
       
-    
+   
     $($modalContainer).on('click', hideModal);
       
     window.addEventListener('keydown', (e) => {
