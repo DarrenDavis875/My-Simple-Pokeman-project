@@ -19,7 +19,7 @@ var pokemonRepository = (function () {
        $($pokemonList).append(listItem);
       $(listItem).on('click',(function(){
          showDetails(pokemon);
-      });
+      }));
        }
     
   
@@ -80,7 +80,7 @@ var pokemonRepository = (function () {
       var closeButtonElement = $('<button class= ',modal-close,'>close</button>');
        $(closeButtonElement).on('click', hideModal);
       // add item name to modal
-      var nameElement = $(<h1 >item.name</h1>);
+      var nameElement = $('<h1>' + item.name + '</h1>');
       
       var imageElementFront = $('<img>');
       imageElementFront.attr('src',item.imageUrlFront);
