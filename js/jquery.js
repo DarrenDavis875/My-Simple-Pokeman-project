@@ -11,15 +11,21 @@ var pokemonRepository = (function () {
   
     var $pokemonList = $('.pokemon_list');
   
-    // adds each pokemon to the pokemon list
-    function addlistItem(pokemon) {
-       var listItem = $('<button type ="button" class="pokemon-button"></button>');
-       listItem.text(pokemon.name);
-       $($pokemonList).append(listItem);
-      $(listItem).on('click',(function(){
-         showDetails(pokemon);
+ // adds each pokemon to the pokemon list
+    function addListItem(pokemon) {
+      var $pokemonList = $('.pokemon_list');
+      var $listItem = $('<li>');
+      $($pokemonList).append($listItem);
+      var $button = $('<button>');
+      $listItem.append($button);
+      $($button).text(pokemon.name)
+      $button.addClass('pokemon-button');
+      $($button).text(pokemon.name);
+      $($button).on('click', (function () {
+        showDetails(pokemon);
       }));
-       }
+    }
+  
     
   
   
@@ -47,7 +53,7 @@ var pokemonRepository = (function () {
       var url = item.detailsUrl;
       return $.ajax(url)
         .then(function(details) {
-          // add the details to the item
+     // add the details to the item
           item.imageUrlFront = details.sprites.front_default;
           item.imageUrlBack = details.sprites.back_default;
           item.height = details.height;
@@ -68,37 +74,47 @@ var pokemonRepository = (function () {
     }
   
      
-    //showModal content 
-    function showModal(item) {
-      //clear $modalContainer
-      $($modalContainer).empty();
-      // add a div and class to DOM
-      var modal = $('<div class = ',modal,'></div');
+   //showModal content 
+     function showModal(item) {
+   //clear $modalContainer
+      $($modalContainer).text('');
+      $($modalContainer).addClass('is-visible');
+
+
+  // add a div and class to DOM
+      var modal = $('<div>');
+      modal.addClass('modal');
       
-      //add close button to modal
-      var closeButtonElement = $('<button class= ',modal-close,'>close</button>');
-       $(closeButtonElement).on('click', hideModal);
-      // add item name to modal
-      var nameElement = $('<h1>' + item.name + '</h1>');
+  //add close button to modal
+      var closeButtonElement = $('<button>');
+      closeButtonElement.addClass('modal-close');
+      closeButtonElement.text('close');
+      $(closeButtonElement).on('click', hideModal);
+
+  // add item name to modal
+      var nameElement = $('<h1>');
+      nameElement.text(item.name);
       
       var imageElementFront = $('<img>');
       imageElementFront.attr('src',item.imageUrlFront);
   
       var imageElementBack = $('<img>');
       imageElementBack.attr('src', item.imageUrlBack);
-      // add height to modal
-      var heightElement = $('<p>' + 'Height: ' + item.height + 'm','</p>');
-      
-      // add weight to modal
-      var weightElement = $('<p>' + 'Weight: ' + item.weight + 'kg','</p>');
-      
+  // add height to modal
+      var heightElement = $('<p>');
+      heightElement.text('Height: ' , item.height, 'm');
+  // add weight to modal
+      var weightElement = $('<p>');
+      weightElement.text('Weight: ', item.weight, 'kg');
+
+
       $(modal).append(closeButtonElement);
       $(modal).append(imageElementFront);
       $(modal).append(imageElementBack);
       $(modal).append(heightElement);
       $(modal).append(weightElement);
       $($modalContainer).append(modal);
-      $($modalContainer).addClass(is-visible);
+     
     }
   
        
@@ -114,12 +130,12 @@ var pokemonRepository = (function () {
     });
     // hides modal when close button, target, escape button is hit.
     function hideModal() {
-      $modalContainer.classList.remove('is-visible');
+      $($modalContainer).remove('is-visible');
     }
     return {
       add: add,
       getAll: getAll,
-      addlistItem: addlistItem,
+      addListItem: addListItem,
       loadList: loadList,
       loadDetails: loadDetails,
       showDetails: showDetails,
@@ -129,6 +145,6 @@ var pokemonRepository = (function () {
   })();
   pokemonRepository.loadList().then(function () {
     pokemonRepository.getAll().forEach(function (pokemon) {
-      pokemonRepository.addlistItem(pokemon);
+      pokemonRepository.addListItem(pokemon);
     });
   });
