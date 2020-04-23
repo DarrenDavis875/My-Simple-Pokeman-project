@@ -115,23 +115,24 @@ var pokemonRepository = (function () {
       $(modal).append(weightElement);
       $($modalContainer).append(modal);
      
-    }
-  
-       
-  
+     }
       
    
     $($modalContainer).on('click', hideModal);
-      
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && $modalContainer.classList.contains('is-visible')) {
+
+    $(window).keydown(function(e) {
+      if (e.key === 'Escape' && $($modalContainer).addClass('is-visible')) {
         hideModal();
       }
     });
+
+      
+  
     // hides modal when close button, target, escape button is hit.
     function hideModal() {
       $($modalContainer).removeClass('is-visible');
     }
+
     return {
       add: add,
       getAll: getAll,
