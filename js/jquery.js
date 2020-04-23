@@ -102,10 +102,10 @@ var pokemonRepository = (function () {
       imageElementBack.attr('src', item.imageUrlBack);
   // add height to modal
       var heightElement = $('<p>');
-      heightElement.text('Height: ' , item.height, 'm');
+      heightElement.text('Height: ' + item.height + 'm');
   // add weight to modal
       var weightElement = $('<p>');
-      weightElement.text('Weight: ', item.weight, 'kg');
+      weightElement.text('Weight: '+ item.weight + 'kg');
 
 
       $(modal).append(closeButtonElement);
