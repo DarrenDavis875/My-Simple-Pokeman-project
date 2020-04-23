@@ -130,7 +130,7 @@ var pokemonRepository = (function () {
     });
     // hides modal when close button, target, escape button is hit.
     function hideModal() {
-      $($modalContainer).remove('is-visible');
+      $($modalContainer).removeClass('is-visible');
     }
     return {
       add: add,
