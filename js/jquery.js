@@ -23,7 +23,6 @@ var pokemonRepository = (function () {
       }));
     }
   
-    
   
   
       function loadList() {
