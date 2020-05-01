@@ -65,6 +65,7 @@ var pokemonRepository = (function () {
    function showDetails(item) {
       pokemonRepository.loadDetails(item).then(function () {
         console.log(item);
+        showModal(item) = "";
         showModal(item);
       });
     }
@@ -84,7 +85,7 @@ var pokemonRepository = (function () {
   //add close button to modal
     var closeButtonElement = $('<button>');
       closeButtonElement.addClass('modal-close');
-    / closeButtonElement.text('close');
+     closeButtonElement.text('close');
     $(closeButtonElement).on('click', hideModal);
 
 //   add item name to modal
@@ -92,16 +93,18 @@ var pokemonRepository = (function () {
       nameElement.text(item.name);
       
       var imageElementFront = $('<img>');
-     imageElementFront.attr('src',item.imageUrlFront);
+     $('#pokemon-front').attr('src',item.imageUrlFront);
   
       var imageElementBack = $('<img>');
-      imageElementBack.attr('src', item.imageUrlBack);
+      $("#pokemon-back").attr('src', item.imageUrlBack);
+
   // add height to modal
      var heightElement = $('<p>');
-     heightElement.text('Height: ' + item.height + 'm');
+     $('#item-height').attr(Height,item.height + 'm');
+
   // add weight to modal
       var weightElement = $('<p>');
-      weightElement.text('Weight: '+ item.weight + 'kg');
+    $('#item-weight').attr(Weight,item.height + 'kg');
 
 
     $(modal).append(closeButtonElement);

@@ -39,6 +39,7 @@
   </header>
   
  <ul class="pokemon_list"></ul>
+ <div id="modalContainer"></div>
 
      <!--modal content-->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalTitle" aria-hidden="true">
@@ -51,8 +52,12 @@
             </button>
           </div>
           <div class="modal-body">
-
+            <img src="" id="pokemon-front" alt = "pokemon front picture">
+            <img src="" id="pokemon-back" alt = "pokemon back picture">
+            <p id="item-height"></p>
+            <p id="item-weight"></p>
           </div>
+
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
             <button type="button" class="btn btn-primary">Save changes</button>
