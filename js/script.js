@@ -5,34 +5,21 @@ var pokemonRepository = (function () {
   function add(pokemon) {
     repository.push(pokemon);
   }
+
   function getAll() {
     return repository;
-​
   }
+  
+​   var $pokemonList = $('.pokemon_list');
 ​
-  var $pokemonList = $('.pokemon_list');
-​
-  // adds a pokemon button to the pokemon list
-​
-  //** you cant just write HTML like you have in your $button variable like that in a js file */
-​
-  // function addListItem(pokemon) {
-  //   var $pokemonList = $('.pokemon_list');
-  //   var $button = <button type="button" class="btn btn-primary btn-lg btn-block btn-list-group-item" data-toggle="modal" data-target="#exampleModal"> + pokemon.name + </button> ;
-  //   var $listItem = $('<li>');
-  //   $listItem.append($button);
-  //   $pokemonList.append($listItem);
-  //   $($button).on('click', (function () {
-  //     showDetails(pokemon);
-  //   }));
-  // }
+ 
   /// corrected
   function addListItem(pokemon) {
     var $pokemonList = $('.pokemon_list');
     var $listItem = $('<li>');
     // data target NEEDS to be the same as the ID of your modal or the connection wont be made
     var $button = $(
-      '<button type="button" class="btn btn-primary btn-lg btn-block btn-list-group-item" data-toggle="modal" data-target="#pokemonModal">' +
+      '<button type="button" class="btn   btn-list-group-item" data-toggle="modal" data-target="#pokemonModal">' +
       pokemon.name +
       "</button>"
     );
@@ -43,9 +30,7 @@ var pokemonRepository = (function () {
     }));
   }
 ​
-​
-​
-  function loadList() {
+​  function loadList() {
     return $.ajax(apiUrl)
       .then(function (json) {
         json.results.forEach(function (item) {
