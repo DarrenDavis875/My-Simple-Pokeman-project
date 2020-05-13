@@ -9,6 +9,16 @@ var pokemonRepository = (function () {
   function getAll() {
     return repository;
   }
+
+  // function to search list
+$(document).ready(function(){
+  $("#mySearchInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#poke_list").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
   
 ​   var $pokemonList = $('.pokemon_list');
 ​
@@ -95,48 +105,10 @@ var pokemonRepository = (function () {
     $("#item-height").html($heightElement);
     $("#item-weight").html($weightElement);
     $("#pokemon-front").attr("src", item.imageUrlFront);
-    // //clear $modalContainer
-    // $($modalContainer).text('');
-    // $($modalContainer).addClass('is-visible');
-​
-​
-    // // add a div and class to DOM
-    // var modal = $('<div>');
-    // modal.addClass('modal');
-​
-    // //add close button to modal
-    // var closeButtonElement = $('<button>');
-    // closeButtonElement.addClass('modal-close');
-    // closeButtonElement.text('close');
-    // $(closeButtonElement).on('click', hideModal);
-​
-    // //   add item name to modal
-    // var nameElement = $('<h1>');
-    // nameElement.text(item.name);
-​
-    // var imageElementFront = $('<img>');
-    // $('#pokemon-front').attr('src', item.imageUrlFront);
-​
-    // var imageElementBack = $('<img>');
-    // $("#pokemon-back").attr('src', item.imageUrlBack);
-​
-    // // add height to modal
-    // var heightElement = $('<p>');
-    // $('#item-height').attr(Height, item.height + 'm');
-​
-    // // add weight to modal
-    // var weightElement = $('<p>');
-    // $('#item-weight').attr(Weight, item.height + 'kg');
-​
-​
-    // $(modal).append(closeButtonElement);
-    // $(modal).append(imageElementFront);
-    // $(modal).append(imageElementBack);
-    // $(modal).append(heightElement);
-    // $(modal).append(weightElement);
-    // $($modalContainer).append(modal);
-​
+    
   }
+
+
 ​
 ​
   $($modalContainer).on('click', hideModal);
