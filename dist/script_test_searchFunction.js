@@ -8,7 +8,7 @@ var pokemonRepository = function() {
     }
     $(".pokemon_list");
 
-
+    //Search Bar Function//
     $(document).ready(function(){
         $("#mySearchInput").on("keyup", function() {
           var value = $(this).val().toLowerCase();
